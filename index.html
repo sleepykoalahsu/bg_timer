@@ -9,97 +9,61 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
 
-    <style>
-      body {
-        background: black;
-        font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-        color: white;
-        width: 100%;
-      }
-
-      #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-      #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 80px; }
-      #sortable li span { position: absolute; margin-left: -1.3em; }
-      /* #sortable span { position: absolute; margin-right: 1.3em; } */
-
-      .lic {
-        background-color: blue;
-      }
-
-      .lid {
-        border-style: dotted;
-        right: 5px;
-      }
-
-      #big_menu {
-        background-color: red;
-      }
-
-      #timer_display {
-        height: 500px;
-        line-height: 500px;
-        text-align: center;
-        font-size: 800%;
-      }
-      #player_display {
-        background-color: green;
-        height: 200px;
-        line-height: 200px;
-        text-align: center;
-        font-size: 300%;
-      }
-      
-      #control_menu {
-        background-color: purple;
-        height: 80px;
-        line-height: 80px;
-      }
-
-      .control_span {
-        text-align: center;
-        float:left;
-        width:33%;
-        border-style: dotted;
-      }
-
-    </style>
+    <link rel="stylesheet" media="screen and (min-width: 400px) and (max-width: 700px)" href="mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="pc.css" />
 
     <script>
       $(function() {
         $("#sortable").sortable();
         $("#sortable").disableSelection();
+        //$("#display_block").hide();
+        $("#setting_block").hide();
       });
     </script>
   </head>
   <body>
 
-    <div class="container">
+    <div id="display_block">
 
       <div class="demo">
       <ul id="sortable">
-        <li class="lic">player 1<span class="lid">10.15s</span></li>
-        <li class="lic">player 2<span class="lid">10.15s</span></li>
-        <li class="lic">player 3<span class="lid">10.15s</span></li>
-        <li class="lic">player 4<span class="lid">10.15s</span></li>
+        <li>player 1<span>10.15s</span></li>
+        <li>player 2<span>10.15s</span></li>
+        <li>player 3<span>10.15s</span></li>
+        <li>player 4<span>10.15s</span></li>
+        <li>player 3<span>10.15s</span></li>
+        <li>player 3<span>10.15s</span></li>
+        <li>player 3<span>10.15s</span></li>
+        <li>player 3<span>10.15s</span></li>
       </ul>
       </div><!-- End demo -->
 
       <div id="big_menu">
+        <div id="player_display">player_display</div>
         <div id="timer_display">timer_display</div>
-        <div id="player_display">player_display<div>
       </div>
 
       <div id="control_menu">
-          <span class="control_span" id="nexPlay">next</span>
-          <span class="control_span" id="pausePlay">pause</span>
-          <span class="control_span" id="setPlay">set</span>
+          <span id="nexPlay">next</span>
+          <span id="pausePlay">pause</span>
+          <span id="setPlay">set</span>
        </div>
 
     </div>
+
+    <div id="setting_block">
+      timer_limit: <input type="text" id ="timer_limit" value ="30"> <br />
+      player_number: <input type="text" id="player_num" value="4"> <br />
+      player1 <input type="text" id ="player1" value ="player1v"> <button onclick="myPlay(1)">play</button> <br/>
+      player2 <input type="text" id ="player2" value ="player2v"> <button onclick="myPlay(2)">play</button> <br/>
+      player3 <input type="text" id ="player3" value ="player3v"> <button onclick="myPlay(3)">play</button> <br/>
+      player4 <input type="text" id ="player4" value ="player4v"> <button onclick="myPlay(4)">play</button> <br/>
+    </div>
+    <audio controls src="http://translate.google.com/translate_tts?ie=utf-8&tl=en&q=good&client=tw-ob" id="cc" style="visibility: hidden;" onended="audio_endPlay()"></audio> 
 
     </body>
 </html>

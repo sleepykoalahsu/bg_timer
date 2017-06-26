@@ -1,0 +1,59 @@
+      body {
+        background: black;
+        font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: white;
+        width: 98%;
+      }
+
+      #sortable li, #control_menu, #big_menu {
+        margin: 3px 3px 3px 3px;
+      }
+
+      #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+      #sortable li { 
+        background-color: blue;
+        padding: 0.4em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        height: 16px;
+        line-height: 16px;
+      }
+
+      #sortable span {
+        /* border-style: dotted; */
+        position: absolute;
+        right: 5em;
+      }
+
+      #big_menu {
+        background-color: red;
+      }
+
+      #player_display {
+        background-color: green;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 300%;
+      }
+
+      #timer_display {
+        height: 180px;
+        line-height: 180px;
+        text-align: center;
+        font-size: 800%;
+      }
+      
+      #control_menu {
+        background-color: purple;
+        height: 40px;
+        line-height: 40px;
+        font-size: 150%;
+      }
+
+      #control_menu span {
+        text-align: center;
+        float:left;
+        width:33%;
+      }
+
