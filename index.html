@@ -9,8 +9,8 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
 
     <style>
@@ -18,10 +18,11 @@
         background: black;
         font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
         color: white;
+        width: 100%;
       }
 
       #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-      #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+      #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 80px; }
       #sortable li span { position: absolute; margin-left: -1.3em; }
       /* #sortable span { position: absolute; margin-right: 1.3em; } */
 
@@ -39,22 +40,23 @@
       }
 
       #timer_display {
-        height: 200px;
-        line-height: 200px;
+        height: 500px;
+        line-height: 500px;
         text-align: center;
         font-size: 800%;
       }
       #player_display {
         background-color: green;
-        height: 50px;
-        line-height: 50px;
+        height: 200px;
+        line-height: 200px;
         text-align: center;
+        font-size: 300%;
       }
       
       #control_menu {
         background-color: purple;
-        height: 40px;
-        line-height: 40px;
+        height: 80px;
+        line-height: 80px;
       }
 
       .control_span {
