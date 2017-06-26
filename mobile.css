@@ -15,8 +15,8 @@
         padding: 0.4em;
         padding-left: 1.5em;
         padding-right: 1.5em;
-        height: 40px;
-        line-height: 40px;
+        height: 160px;
+        line-height: 160px;
         margin-top: 6px;
         margin-bottom: 6px;
       }
@@ -33,23 +33,23 @@
 
       #player_display {
         background-color: green;
-        height: 160px;
-        line-height: 160px;
+        height: 200px;
+        line-height: 200px;
         text-align: center;
         font-size: 300%;
       }
 
       #timer_display {
-        height: 400px;
-        line-height: 400px;
+        height: 800px;
+        line-height: 800px;
         text-align: center;
         font-size: 600%;
       }
       
       #control_menu {
         background-color: purple;
-        height: 80px;
-        line-height: 80px;
+        height: 400px;
+        line-height: 400px;
         font-size: 150%;
       }
 
