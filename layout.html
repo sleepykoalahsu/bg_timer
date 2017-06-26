@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>jQuery UI Touch Punch - Mobile Device Touch Event Support for jQuery UI</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>sortable</title>
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,19 +11,27 @@
 
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
 
     <style>
       #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
       #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
       #sortable li span { position: absolute; margin-left: -1.3em; }
+
+      .uic {
+        background-color: lightblue;
+        color: red;
+      }
+      body {
+        background:#fff;
+        font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
     </style>
-    <style>body { background:#fff; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }</style>
 
     <script>
       $(function() {
-        $( "#sortable" ).sortable();
-        $( "#sortable" ).disableSelection();
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
       });
     </script>
   </head>
@@ -36,13 +40,13 @@
     <div class="container">
       <div class="demo">
       <ul id="sortable">
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+        <li class="uic">Item 1</li>
+        <li class="uic">Item 2</li>
+        <li class="uic">Item 3</li>
+        <li class="uic">Item 4</li>
+        <li class="uic">Item 5</li>
+        <li class="uic">Item 6</li>
+        <li class="uic">Item 7</li>
       </ul>
       </div><!-- End demo -->
     </div>
