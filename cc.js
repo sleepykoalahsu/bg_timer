@@ -59,14 +59,15 @@ $(function() {
   $("#sortable li").css("margin", (li_height/12) + "px");
   $("#sortable span").css("right", (li_height) + "px");
 
+  var li_height_a = li_height*1.5;
   $("#big_menu").css("margin", (li_height/12) + "px");
-  $("#player_display").css("height", li_height + "px");
-  $("#player_display").css("line-height", li_height + "px");
-  $("#player_display").css("font-size", (li_height/2) + "px");
-  $("#timer_display").css("height", (li_height*3) + "px");
-  $("#timer_display").css("line-height", (li_height*3) + "px");
-  $("#timer_display_s").css("font-size", (li_height*3/2) + "px");
-  $("#timer_display_ms").css("font-size", (li_height*3/2/2) + "px");
+  $("#player_display").css("height", li_height_a + "px");
+  $("#player_display").css("line-height", li_height_a + "px");
+  $("#player_display").css("font-size", (li_height_a/2) + "px");
+  $("#timer_display").css("height", (li_height_a*3) + "px");
+  $("#timer_display").css("line-height", (li_height_a*3) + "px");
+  $("#timer_display_s").css("font-size", (li_height_a*3/2) + "px");
+  $("#timer_display_ms").css("font-size", (li_height_a*3/2/2) + "px");
 
   $("#control_menu").css("height", (li_height) + "px");
   $("#control_menu").css("line-height", (li_height) + "px");
