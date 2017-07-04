@@ -1,7 +1,7 @@
       body {
-        background: black;
+        background-color: black;
+        color: black;
         font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-        color: white;
         width: 98%;
       }
 
@@ -10,13 +10,14 @@
       }
 
       #sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+
       #sortable li { 
-        background-color: blue;
         padding: 0.4em;
         padding-left: 1.5em;
         padding-right: 1.5em;
         height: 16px;
         line-height: 16px;
+        font-size: 100%;
       }
 
       #sortable span {
@@ -26,11 +27,9 @@
       }
 
       #big_menu {
-        background-color: red;
       }
 
       #player_display {
-        background-color: green;
         height: 60px;
         line-height: 60px;
         text-align: center;
@@ -41,11 +40,17 @@
         height: 180px;
         line-height: 180px;
         text-align: center;
+      }
+      #timer_display_s {
         font-size: 800%;
+        display: inline-block; 
+      }
+      #timer_display_ms {
+        font-size: 400%;
+        display: inline-block;
       }
       
       #control_menu {
-        background-color: purple;
         height: 40px;
         line-height: 40px;
         font-size: 150%;
@@ -55,5 +60,52 @@
         text-align: center;
         float:left;
         width:33%;
+        margin: 3px;
       }
+
+      /* setting page */
+      /*
+      h2 {
+        background-color: #2196F3;
+        color: white;
+      }
+
+      span {
+        display: inline-block;
+        width: 120px;
+      }
+
+      li {
+        margin: 5px;
+      }
+      */
+
+/* color list */
+.w3-text-red{background-color:#f44336!important}
+.w3-text-green{background-color:#4CAF50!important}
+.w3-text-blue{background-color:#2196F3!important}
+.w3-text-yellow{background-color:#ffeb3b!important}
+.w3-text-white{background-color:#fff!important}
+.w3-text-black{background-color:#000!important}
+.w3-text-grey{background-color:#757575!important}
+.w3-text-amber{background-color:#ffc107!important}
+.w3-text-aqua{background-color:#00ffff!important}
+.w3-text-light-blue{background-color:#87CEEB!important}
+.w3-text-brown{background-color:#795548!important}
+.w3-text-cyan{background-color:#00bcd4!important}
+.w3-text-blue-grey{background-color:#607d8b!important}
+.w3-text-light-green{background-color:#8bc34a!important}
+.w3-text-indigo{background-color:#3f51b5!important}
+.w3-text-khaki{background-color:#b4aa50!important}
+.w3-text-lime{background-color:#cddc39!important}
+.w3-text-orange{background-color:#ff9800!important}
+.w3-text-deep-orange{background-color:#ff5722!important}
+.w3-text-pink{background-color:#e91e63!important}
+.w3-text-purple{background-color:#9c27b0!important}
+.w3-text-deep-purple{background-color:#673ab7!important}
+.w3-text-sand{background-color:#fdf5e6!important}
+.w3-text-teal{background-color:#009688!important}
+.w3-text-light-grey{background-color:#f1f1f1!important}
+.w3-text-dark-grey{background-color:#3a3a3a!important}
+
 

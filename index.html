@@ -5,6 +5,10 @@
 
     <title>BG_Timer</title>
 
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-windows.css">
+
+    <link rel="stylesheet" href="pc.css" />
+
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -13,7 +17,11 @@
     <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
 
-    <link rel="stylesheet" href="pc.css" />
+    <!--
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+    -->
 
     <!--
     <link rel="stylesheet" href="mobile.css" />
@@ -21,14 +29,6 @@
     <link rel="stylesheet" media="screen and (min-width: 800px)" href="pc.css" />
     -->
 
-    <script>
-      $(function() {
-        $("#sortable").sortable();
-        $("#sortable").disableSelection();
-        //$("#display_block").hide();
-        $("#setting_block").hide();
-      });
-    </script>
   </head>
   <body>
 
@@ -40,35 +40,90 @@
         <li>player 2<span>10.15s</span></li>
         <li>player 3<span>10.15s</span></li>
         <li>player 4<span>10.15s</span></li>
+        <!---
         <li>player 3<span>10.15s</span></li>
         <li>player 3<span>10.15s</span></li>
         <li>player 3<span>10.15s</span></li>
         <li>player 3<span>10.15s</span></li>
+        --->
       </ul>
       </div><!-- End demo -->
 
       <div id="big_menu">
-        <div id="player_display">player_display</div>
-        <div id="timer_display">timer_display</div>
+        <div id="player_display">[player_display]</div>
+        <!-- <div id="timer_display">timer_display</div> -->
+        <div id="timer_display"><div id="timer_display_s">00:30.</div><div id="timer_display_ms">00</div></div>
       </div>
 
       <div id="control_menu">
-          <span id="nexPlay">next</span>
-          <span id="pausePlay">pause</span>
-          <span id="setPlay">set</span>
+          <span id="nexPlay">Play</span>
+          <span id="pausePlay">Pause</span>
+          <span id="setPlay">Set</span>
        </div>
 
     </div>
 
     <div id="setting_block">
-      timer_limit: <input type="text" id ="timer_limit" value ="30"> <br />
-      player_number: <input type="text" id="player_num" value="4"> <br />
-      player1 <input type="text" id ="player1" value ="player1v"> <button onclick="myPlay(1)">play</button> <br/>
-      player2 <input type="text" id ="player2" value ="player2v"> <button onclick="myPlay(2)">play</button> <br/>
-      player3 <input type="text" id ="player3" value ="player3v"> <button onclick="myPlay(3)">play</button> <br/>
-      player4 <input type="text" id ="player4" value ="player4v"> <button onclick="myPlay(4)">play</button> <br/>
+      <h1>Setting Block</h1>
+      <ul>
+        <li id="ddd">
+          <span>timer_limit:</span>
+          <input type="text" id ="timer_limit" value ="30">
+        </li>
+        <li>
+          <span>player_number:</span>
+           <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+           </select>
+        </li>
+        <li>
+          <span>player1</span>
+          <input type="text" id ="player1" value ="player1v">
+           <select>
+            <option value="red">red</option>
+            <option value="green">green</option>
+           </select>
+          <a onclick="myPlay(1)">play</a>
+        </li>
+        <li>
+          <span>player2</span>
+          <input type="text" id ="player2" value ="player2v">
+           <select>
+            <option value="red">red</option>
+            <option value="green">green</option>
+           </select>
+          <a onclick="myPlay(2)">play</a>
+        </li>
+        <li>
+          <span>player3</span>
+          <input type="text" id ="player3" value ="player3v">
+           <select>
+            <option value="red">red</option>
+            <option value="green">green</option>
+           </select>
+          <a onclick="myPlay(3)">play</a>
+        </li>
+        <li>
+          <span>player4</span>
+          <input type="text" id ="player4" value ="player4v">
+           <select>
+            <option value="red">red</option>
+            <option value="green">green</option>
+           </select>
+           <a>play</a>
+        </li>
+        <li>
+          <a herf="#">GO!</a>
+        </li>
+      </ul>
     </div>
     <audio controls src="https://translate.google.com/translate_tts?ie=utf-8&tl=en&q=good&client=tw-ob" id="cc" style="visibility: hidden;" onended="audio_endPlay()"></audio> 
+
+    <script src="play.js"></script>
+    <script src="cc.js"></script>
 
     </body>
 </html>

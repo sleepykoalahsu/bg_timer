@@ -1,35 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" /></head>
-<body>
 
-<audio controls src="http://translate.google.com/translate_tts?ie=utf-8&tl=en&q=good&client=tw-ob" id="cc" style="visibility: hidden;" onended="audio_endPlay()"></audio> 
+var g_cur_play = 0;
+var g_max_play = 4;
 
-<div id="timer_display"> current time </div> <br />
-<div id="player_display"> current player </div> <br />
+// for play sound control
+var g_play_tmp  = 0;
+var g_play_tmp2 = 0;
 
-<input type="text" id ="timer_limit" value ="30"> <br/>
-<input type="text" id ="player1" value ="player1v"> <button onclick="myPlay(1)">play</button> <br/>
-<input type="text" id ="player2" value ="player2v"> <button onclick="myPlay(2)">play</button> <br/>
-<input type="text" id ="player3" value ="player3v"> <button onclick="myPlay(3)">play</button> <br/>
-<input type="text" id ="player4" value ="player4v"> <button onclick="myPlay(4)">play</button> <br/>
-
-<br/>
-<button onclick="playNext()">next</button> <br/>
-<button onclick="playPauseTimer()">pause</button> <br/>
-
-
-<script>
-
-  var g_cur_play = 0;
-  var g_max_play = 4;
-
-  // for play sound control
-  var g_play_tmp  = 0;
-  var g_play_tmp2 = 0;
-
-  var g_y;
-  var g_timerPause = 0;
+var g_y;
+var g_timerPause = 0;
 
 // audio
 function audio_endPlay() {
@@ -81,8 +59,7 @@ function playStartName(id) {
 
   g_play_tmp = 1;
 
-  var display_player = document.getElementById("player_display");
-  display_player.innerHTML = "player" + g_cur_play;
+  $("#player_display").text("[player" + g_cur_play + "]");
 
   var player_id = "player" + id;
   var player = document.getElementById(player_id);
@@ -108,37 +85,40 @@ function playStartTimer() {
   var cc_tmp;
   var cc_tmp2;
 
-// Update the count down every 1 second
-g_y = setInterval(function() {
+  // Update the count down every 1 second
+  g_y = setInterval(function() {
 
     var now = new Date().getTime();
-    
+
     // Find the distance between now an the count down date
     var distance = countDownDate - now;
     if (g_timerPause == 1) {
       var t = new Date();
-      t.setSeconds(t.getSeconds() + cc_tmp2);
-      countDownDate = t.getTime();
+      //t.setSeconds(t.getSeconds() + cc_tmp2);
+      countDownDate = t.getTime() + cc_tmp2;
 
-      document.getElementById("timer_display").innerHTML = Math.floor(distance/1000) + "." + Math.floor(distance/100)%100 + "s stop";
+      $("#timer_display_s").text("00:"+Math.floor(distance/1000)+".");
+      $("#timer_display_ms").text(Math.floor(distance/100)%100);
     }
     else if (g_timerPause == 0) {
 
       // Output the result in an element with id="demo"
-      document.getElementById("timer_display").innerHTML = Math.floor(distance/1000) + "." + Math.floor(distance/100)%100 + "s ";
-      
+      $("#timer_display_s").text("00:"+Math.floor(distance/1000)+".");
+      $("#timer_display_ms").text(Math.floor(distance/100)%100);
+
       var cc = Math.floor(distance/1000);
-      cc_tmp2 = cc;
+      cc_tmp2 = distance;
 
       // If the count down is over, write some text 
       if (distance < 0) {
-          clearInterval(g_y);
-          document.getElementById("timer_display").innerHTML = "EXPIRED";
+        $("timer_display_s").text("EXPIRED");
+        $("timer_display_ms").text("");
+        clearInterval(g_y);
       }
       else if (cc % 10 == 0 && (cc_tmp != cc)) {
-          //clearInterval(x);
-          audio_startPlay(cc);
-          cc_tmp = cc;
+        //clearInterval(x);
+        audio_startPlay(cc);
+        cc_tmp = cc;
       }
       else if ((cc < 6) && (cc_tmp != cc)) {
         audio_startPlay(cc);
@@ -146,7 +126,7 @@ g_y = setInterval(function() {
       }
     }
 
-}, 300);
+  }, 10);
 
 }
 
@@ -162,9 +142,4 @@ function playPauseTimer() {
 // overflow timer for each player
 // sortable
 // set name & color
-
-</script>
-
-</body>
-</html>
 
