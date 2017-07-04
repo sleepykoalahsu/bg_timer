@@ -18,7 +18,7 @@ $(function() {
     $(li).addClass(colors[i]);
     i = i + 1;
   });
-  $("#sortable li").css("color", "black");
+  $("#sortable li").css("color", "white");
   $("#big_menu").addClass("w3-text-red");
 
   $("#control_menu span").addClass("w3-text-light-blue");
