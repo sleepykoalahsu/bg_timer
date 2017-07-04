@@ -46,7 +46,7 @@ $(function() {
 
   //$("select").addClass("w3-select");
   */
-  var g_height = Math.floor($(window).height()*0.8);
+  var g_height = Math.floor($(window).height()*0.7);
   //var g_height = $(document).height();
   //
   var li_height = (g_height/10);
@@ -65,13 +65,14 @@ $(function() {
   $("#player_display").css("font-size", (li_height/2) + "px");
   $("#timer_display").css("height", (li_height*3) + "px");
   $("#timer_display").css("line-height", (li_height*3) + "px");
-  $("#timer_display_s").css("font-size", (li_height*3/1.2) + "px");
-  $("#timer_display_ms").css("font-size", (li_height*3/1.2/2) + "px");
+  $("#timer_display_s").css("font-size", (li_height*3/2) + "px");
+  $("#timer_display_ms").css("font-size", (li_height*3/2/2) + "px");
 
   $("#control_menu").css("height", (li_height) + "px");
   $("#control_menu").css("line-height", (li_height) + "px");
   $("#control_menu span").css("margin", (li_height/12) + "px");
   $("#control_menu span").css("width", ($(window).width()*0.8/3) + "px");
+  $("#control_menu span").css("font-size", (li_height/2) + "px");
 
 });
 
