@@ -20,11 +20,13 @@
         font-size: 100%;
       }
 
+       /* border-style: dotted; */
+      /*
       #sortable span {
-        /* border-style: dotted; */
         position: absolute;
         right: 5em;
       }
+      */
 
       #big_menu {
       }
@@ -79,6 +81,10 @@
         margin: 5px;
       }
       */
+
+      .spanright {
+        float: right;
+      }
 
 /* color list */
 .w3-text-red{background-color:#f44336!important}

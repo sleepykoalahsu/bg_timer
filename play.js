@@ -1,13 +1,21 @@
 
-var g_cur_play = 0;
-var g_max_play = 4;
+var g_cur_play = -1;
+var g_max_play = 4-1;
 
 // for play sound control
 var g_play_tmp  = 0;
 var g_play_tmp2 = 0;
+var g_play_tmp3 = 0;
 
 var g_y;
 var g_timerPause = 0;
+
+var g_players = [
+  {"name": "player1b", color: 0, pos: 0, time: 0},
+  {"name": "player2b", color: 1, pos: 1, time: 0},
+  {"name": "player3b", color: 2, pos: 2, time: 0},
+  {"name": "player4b", color: 3, pos: 3, time: 0}
+];
 
 // audio
 function audio_endPlay() {
@@ -31,26 +39,19 @@ function audio_startPlay(tmp) {
 // main
 
 function playNext() {
-
-  if (g_cur_play == g_max_play) {
-    g_cur_play = 1;
-  }
-  else {
-    g_cur_play = g_cur_play + 1;
-  }
-
-  myPlay(g_cur_play);
+  var cc = getPlayerIdByPos(g_cur_play);
+  myPlay(cc);
 }
 
 function playClear() {
   g_play_tmp  = 0;
   g_play_tmp2 = 0;
+  g_play_tmp3 = 0;
   g_timerPause = 0;
   clearInterval(g_y);
 }
 
 function myPlay(id) {
-  g_cur_play = id;
   playClear();
   playStartName(id);
 }
@@ -59,12 +60,9 @@ function playStartName(id) {
 
   g_play_tmp = 1;
 
-  $("#player_display").text("[player" + g_cur_play + "]");
+  $("#player_display").text("["+ g_players[id].name + "]");
 
-  var player_id = "player" + id;
-  var player = document.getElementById(player_id);
-
-  audio_startPlay(player.value);
+  audio_startPlay(g_players[id].name);
 }
 
 function getTimerLimit() {
@@ -97,14 +95,14 @@ function playStartTimer() {
       //t.setSeconds(t.getSeconds() + cc_tmp2);
       countDownDate = t.getTime() + cc_tmp2;
 
-      $("#timer_display_s").text("00:"+Math.floor(distance/1000)+".");
-      $("#timer_display_ms").text(Math.floor(distance/100)%100);
+      $("#timer_display_s").text("00:"+pad(Math.floor(distance/1000),2)+".");
+      $("#timer_display_ms").text(pad(Math.floor(distance/100)%100,2));
     }
     else if (g_timerPause == 0) {
 
       // Output the result in an element with id="demo"
-      $("#timer_display_s").text("00:"+Math.floor(distance/1000)+".");
-      $("#timer_display_ms").text(Math.floor(distance/100)%100);
+      $("#timer_display_s").text("00:"+pad(Math.floor(distance/1000),2)+".");
+      $("#timer_display_ms").text(pad(Math.floor(distance/100)%100,2));
 
       var cc = Math.floor(distance/1000);
       cc_tmp2 = distance;
@@ -138,6 +136,45 @@ function playPauseTimer() {
     g_timerPause = 0;
   }
 }
+
+function pad(num, size) {
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
+
+function getPlayerIdByName(name) {
+  var i = 0;
+  for (i=0;i<=g_max_play;i++) {
+    if (g_players[i].name == name) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+function getPlayerIdByPos(pos) {
+  var i = 0;
+  for (i=0;i<=g_max_play;i++) {
+    if (g_players[i].pos == pos) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+
+function sortableChange() {
+  var listItems = $(".spanleft");
+  var i = 0;
+  listItems.each(function(idx, li) {
+    var id = getPlayerIdByName($(li).text());
+    g_players[id].pos = i;
+    //alert(i + " "+ g_players[i].name + " " +g_players[i].pos);
+    i = i +1;
+  });
+}
+  
 
 // overflow timer for each player
 // sortable
